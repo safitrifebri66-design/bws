@@ -1,0 +1,386 @@
+@font-face {
+  font-family: "Bawiswara";
+  src: url("../fonts/bawiswara.ttf") format("truetype");
+}
+
+:root {
+  --primary: #5a5763;
+  --bg: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  min-height: 3000px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #3c3b3b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-family: "Bawiswara";
+  font-size: 2rem;
+  font-weight: 800;
+  color: #c90101;
+  letter-spacing: 3px;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* hero section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/bawiswara4.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative; /* tambahkan ini */
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 10%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* history section */
+.history,
+.display,
+.contact {
+  padding: 5rem 7% 1.4rem;
+}
+
+.history h2,
+.display h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.history .row {
+  display: flex;
+}
+
+.history .row .history-img {
+  flex: 1 1 45rem;
+}
+
+.history .row .history-img img {
+  width: 100%;
+}
+
+.history .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.history .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.history .row .content p {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.6;
+  font-weight: 100;
+}
+
+/* display section */
+.display h2,
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.display p,
+.contact p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.display .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.display .row .display-card {
+  text-align: center;
+  width: 20rem;
+}
+
+.display .row .display-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+
+.display .row .display-card .display-card-title {
+  margin-top: 1.5rem auto 0.5rem;
+}
+
+/* contact section */
+.contact .row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+}
+
+/* maps */
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 45%;
+  height: 300px;
+  border-radius: 1rem;
+  filter: grayscale(1) contrast(1.2);
+  margin-top: -1rem;
+}
+
+/* contact card */
+.contact .row .contact-card {
+  flex: 1 1 30rem;
+  padding: 1rem;
+  margin-top: -3rem;
+}
+
+.contact .row .contact-card h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* item sosial media */
+.contact .contact-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* icon */
+.contact .contact-info i {
+  font-size: 1.5rem;
+  color: #c90101;
+  margin-top: 0.2rem;
+}
+
+/* judul */
+.contact .contact-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+/* isi */
+.contact .contact-info p {
+  margin: 0;
+  text-align: left;
+  color: #cfcfcf;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+/* media queries */
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .history .row {
+    flex-wrap: wrap;
+  }
+
+  .history .row .history-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .history .row .content {
+    padding: 0;
+  }
+
+  .history .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .history .row .content p {
+    font-size: 1.6rem;
+  }
+  
+.display p {
+  font-size: 1.5rem;
+}
+
+  .contact .row .contact-card h3 {
+    text-align: center;
+  }
+}
+
+/* mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+    .hero {
+    align-items: flex-start;
+    padding-top: 8rem;
+  }
+
+  .hero .content {
+    margin-top: 5rem;
+  }
+.contact .row .contact-card h3 {
+    text-align: center;
+  }
+}
